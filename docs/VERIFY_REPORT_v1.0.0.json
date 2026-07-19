@@ -1,0 +1,68 @@
+{
+  "version": "V39E2_FINAL_VERIFY_RUNTIME_AWARE",
+  "timestamp": "19.07.2026_10-54-59",
+  "project_before": "GG_REVIEW_MAP_MASTER_V39E1_REMAINING_ISSUES_19.07.2026_10-46-59.1.toe",
+  "health": {
+    "errors": [],
+    "warnings": []
+  },
+  "overlaps": [],
+  "runtime_exclusions": {
+    "parameter_nodes": [
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_ADAPTIVE_FEATURES_V26",
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27A",
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27B",
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_TEMPO_DEBUG_V29B"
+    ],
+    "dat_paths": [
+      "/project1/GG_PROJECT_CONFIG/text_PROJECT_PATH_LOG",
+      "/project1/TD_CODEX_BRIDGE/folder_WATCH_INBOX",
+      "/project1/TD_CODEX_BRIDGE/table_BRIDGE_STATUS",
+      "/project1/TD_CODEX_BRIDGE/text_LAST_STATUS",
+      "/project1/TD_CODEX_BRIDGE/text_STATUS"
+    ]
+  },
+  "archive_allow_cooking": {
+    "/project1/MAP_MASTER_ARCHIVED": false,
+    "/project1/MAP_MASTER_ARCHIVED_0": false,
+    "/project1/90_ARCHIVE_OLD_MAP_MASTER": false,
+    "/project1/TD_CODEX_BRIDGE_SMOKE_TEST": false,
+    "/project1/MAP_MASTER/90_ARCHIVE": false
+  },
+  "signals": {
+    "fx01": {
+      "ok": true,
+      "width": 1920,
+      "height": 1080,
+      "min": -0.2281494140625,
+      "max": 1.0322265625,
+      "mean": 0.07607170939445496,
+      "nonzero_fraction": 0.1471556712962963
+    },
+    "final": {
+      "ok": true,
+      "width": 1920,
+      "height": 1080,
+      "min": -0.2281494140625,
+      "max": 1.0322265625,
+      "mean": 0.28928273916244507,
+      "nonzero_fraction": 0.36036675347222225
+    }
+  },
+  "checks": {
+    "global_errors_zero": true,
+    "global_warnings_zero": true,
+    "project_overlaps_zero": true,
+    "topology_unchanged": true,
+    "node_sizes_unchanged": true,
+    "parameter_structure_unchanged": true,
+    "code_shader_callback_content_unchanged": true,
+    "archives_cooking_disabled": true,
+    "fx01_output_ok": true,
+    "final_output_ok": true,
+    "fx01_resolution_ok": true,
+    "final_resolution_ok": true
+  },
+  "success": true,
+  "post_milestone": "D:\\Desktop\\td-bridge\\outputs\\saves\\GG_POST_MAP_MASTER_V39E2_FINAL_CLEANUP_19.07.2026_10-54-59.toe"
+}
