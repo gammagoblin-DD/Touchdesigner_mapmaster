@@ -1,0 +1,798 @@
+{
+  "status": "COMPLETE",
+  "classification": "READ_ONLY_DEEP_EXPORT_COMPLETE",
+  "read_only": true,
+  "finished": "2026-08-07T00:46:49+02:00",
+  "export_name": "MAP_MASTER_V47Z0_FINAL_HANDOVER_DEEP_EXPORT_07.08.2026_00-45-50",
+  "export_root": "D:\\Desktop\\td-bridge\\outputs\\deep_exports\\MAP_MASTER_V47Z0_FINAL_HANDOVER_DEEP_EXPORT_07.08.2026_00-45-50",
+  "zip": {
+    "path": "D:\\Desktop\\td-bridge\\outputs\\deep_exports\\MAP_MASTER_V47Z0_FINAL_HANDOVER_DEEP_EXPORT_07.08.2026_00-45-50.zip",
+    "bytes": 9395129,
+    "sha256": "caf5fef27d95eed6299ea12f648c4d33e08b8f82b40a12d96ab4fff11427585a"
+  },
+  "zip_sha256_sidecar": "D:\\Desktop\\td-bridge\\outputs\\deep_exports\\MAP_MASTER_V47Z0_FINAL_HANDOVER_DEEP_EXPORT_07.08.2026_00-45-50.zip.sha256.txt",
+  "runtime": {
+    "effective_fps": 58.315512213407736,
+    "sample_count": 451,
+    "sample_failures": 0,
+    "router_transitions": [
+      {
+        "sample_index": 0,
+        "abs_frame": 155496,
+        "index": 3.0,
+        "selected_input": "/project1/MAP_MASTER/05_ROUTER/select_FX03"
+      }
+    ],
+    "audio_non_finite_values": [],
+    "watched_operator_cook_deltas": {
+      "/project1/MAP_MASTER": 0,
+      "/project1/MAP_MASTER/00_INPUT": 0,
+      "/project1/MAP_MASTER/00_INPUT/constant_BLACK_BG": 0,
+      "/project1/MAP_MASTER/00_INPUT/constant_VIEWER_OFF_TRANSPARENT": 0,
+      "/project1/MAP_MASTER/00_INPUT/fit_GLOBAL_STAGE_BASE_1920": 0,
+      "/project1/MAP_MASTER/00_INPUT/fit_INPUT_1920": 0,
+      "/project1/MAP_MASTER/00_INPUT/level_INPUT_PREP": 0,
+      "/project1/MAP_MASTER/00_INPUT/moviefilein_GLOBAL_STAGE_BASE": 1,
+      "/project1/MAP_MASTER/00_INPUT/moviefilein_INPUT_MEDIA": 1,
+      "/project1/MAP_MASTER/00_INPUT/noise_TEST_NOISE": 0,
+      "/project1/MAP_MASTER/00_INPUT/null_GLOBAL_STAGE_BASE_OUT": 0,
+      "/project1/MAP_MASTER/00_INPUT/null_INPUT_OUT": 0,
+      "/project1/MAP_MASTER/00_INPUT/out1": 0,
+      "/project1/MAP_MASTER/00_INPUT/out_VIEWER_OFF": 0,
+      "/project1/MAP_MASTER/00_INPUT/ramp_TEST_GRADIENT": 0,
+      "/project1/MAP_MASTER/00_INPUT/switch_INPUT_SOURCE": 0,
+      "/project1/MAP_MASTER/01_MASK": 0,
+      "/project1/MAP_MASTER/01_MASK/blur_MASK_FEATHER": 0,
+      "/project1/MAP_MASTER/01_MASK/constant_VIEWER_OFF_TRANSPARENT": 0,
+      "/project1/MAP_MASTER/01_MASK/fit_GLOBAL_NOANIM_MASK_1920": 0,
+      "/project1/MAP_MASTER/01_MASK/glsl_MASK_FROM_ALPHA": 0,
+      "/project1/MAP_MASTER/01_MASK/level_MASK_CLEAN": 0,
+      "/project1/MAP_MASTER/01_MASK/monochrome_MASK_LUMA": 0,
+      "/project1/MAP_MASTER/01_MASK/moviefilein_GLOBAL_NOANIM_MASK": 1,
+      "/project1/MAP_MASTER/01_MASK/null_GLOBAL_NOANIM_MASK_RGB": 0,
+      "/project1/MAP_MASTER/01_MASK/null_MASK_FEATHERED": 0,
+      "/project1/MAP_MASTER/01_MASK/null_MASK_OUT": 0,
+      "/project1/MAP_MASTER/01_MASK/null_MASK_RAW": 0,
+      "/project1/MAP_MASTER/01_MASK/null_NOANIM_MASK_OUT": 0,
+      "/project1/MAP_MASTER/01_MASK/out1": 0,
+      "/project1/MAP_MASTER/01_MASK/out_VIEWER_OFF": 0,
+      "/project1/MAP_MASTER/01_MASK/select_INPUT_FOR_MASK": 0,
+      "/project1/MAP_MASTER/01_MASK/threshold_MASK": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_AO_PROXY": 1,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_BLUR_H": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_BLUR_V": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_CURVATURE": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_DEPTH": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_DISTANCE_PROXY": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_EDGES": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_FEATURE_PACK_A": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_FEATURE_PACK_B": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_GRADIENT": 1,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_LUMA_OBJECT": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/glsl_ANALYSIS_NORMAL": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_AO_PROXY": 1,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_CURVATURE_CAVITY": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_DEPTH": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_DISTANCE_FIELD": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_EDGES": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_FEATURE_PACK_A": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_FEATURE_PACK_B": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_GRADIENT": 1,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_LUMA_OBJECT": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_NORMAL": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_ANALYSIS_PREVIEW": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/null_CONTOUR_OUT": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/out1": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/select_ANALYSIS_GLOBAL_STAGE_BASE": 0,
+      "/project1/MAP_MASTER/02_ANALYSIS/switch_ANALYSIS_PREVIEW": 0,
+      "/project1/MAP_MASTER/03_AUDIO": 0,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01": 0,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/null_AUDIO_GOLDCLASS_FEATURES": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/out1": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/script_AUDIO_GOLDCLASS": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/select_AUDIO_GOLDCLASS_PREVIEW": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/select_AUDIO_GOLD_SOURCE": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/trail_AUDIO_GOLDCLASS_HISTORY": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02": 0,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLDCLASS_ALL": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_BPM": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_BREATH": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_DRIVES": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_FAST": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_FEEL": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_HITS": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_NORM": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_RAW": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_SLOW": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_SMOOTH": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_SYS": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/out1": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/script_GOLDCLASS_ENGINE": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLDCLASS_SOURCE": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_BPM": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_BREATH": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_DRIVES": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_FAST": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_FEEL": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_HITS": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_NORM": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_RAW": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_SLOW": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_SMOOTH": 434,
+      "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_SYS": 434,
+      "/project1/MAP_MASTER/03_AUDIO/audiodevout1": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/audiofilein1": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_ADAPTIVE_FEATURES_V26": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_EQ_BANDS_DUMMY": 0,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_FEATURES_DUMMY": 0,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_FEATURES_REAL": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27": 0,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27A": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27B": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_TEMPO_DEBUG_V29B": 0,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_TEMPO_FAMILY_V29": 0,
+      "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_UNIVERSAL_FEATURES_V25": 0,
+      "/project1/MAP_MASTER/03_AUDIO/execute_AUDIO_ADAPTIVE_ANALYZER_V26": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/execute_AUDIO_MASTER_BUS_V27": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/execute_AUDIO_TEMPO_STATE_V43B3R3": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/lag_AUDIO_FAST_40MS": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/lag_AUDIO_SLOW_600MS": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/merge_AUDIO_FEATURES": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/merge_AUDIO_GOLDCLASS_TEMPO_V06": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/merge_AUDIO_MASTER_FEATURES_V27": 2273,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIOFILE_RAW": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_DEBUG_BUS": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_EQ_BANDS": 0,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_FAST_BPM_V04": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_FEATURES": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_FEATURES_PRO": 0,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_GOLDCLASS_FEATURES": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_GOLDCLASS_V02_ALL": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_GOLDCLASS_V06_ALL": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_MASTER_FEATURES_V27": 2273,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_OUT": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_TEMPO_LOCK_V06": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_TEMPO_STATE_OUT_V43B3R3": 2273,
+      "/project1/MAP_MASTER/03_AUDIO/out1": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_DEBUG_BUS": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_GOLDCLASS_LEGACY_COMPAT_V03_TEST": 0,
+      "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_SANITIZE_V06": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_TEMPO_LOCK_V06": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_TEMPO_STATE_OUT_V43B3R3": 2273,
+      "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_GOLDCLASS_FEATURES": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_GOLDCLASS_V02_ALL": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_RAW_FAST_BPM_V04": 2271,
+      "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_RAW_TEMPO_V06": 2272,
+      "/project1/MAP_MASTER/03_AUDIO/trail_AUDIO_DEBUG_HISTORY": 2271,
+      "/project1/MAP_MASTER/04_FX": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/glsl_FX_SHADER": 1,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/level_FX_POST": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/null_FX00_OUT": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/null_FX00_RAW": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/out1": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/select_BASE": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/select_CONTOUR": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/select_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/FX_00_BYPASS/transform_FX_ANIMATE": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/constant_FX01_SIM_CLOCK_V24": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/feedback_FX01_ORIGINAL_BLUR_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/feedback_FX01_ORIGINAL_STATE_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_OBJECT_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_BLUR_H_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_BLUR_V_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_COMPOSITE_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_SEED_V04": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_SHADE_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_SIM_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_PROTECTED_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_WHITE_MAGENTA_MASK_V04": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/level_FX01_MASTER_POST": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_OBJECT_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_BLUR_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_OUT_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_SEED_V04": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_STATE_V04": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_OUT": 2271,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_PROTECTED_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_WHITE_MAGENTA_MASK_V04": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/out1": 434,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/select_FX01_NOANIM": 0,
+      "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/select_FX01_STAGE": 0,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS": 0,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/glsl_FX02_ORBIT_3D_LIGHTS": 2272,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/lag_FX02_AUDIO_SMOOTH": 2272,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/level_FX02_ORBIT_3D_POST": 434,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/null_FX02_AUDIO_MOD": 2272,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/null_FX02_ORBIT_3D_PREVIEW": 434,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/null_FX02_OUT": 434,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/out1": 434,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/select_FX02_AUDIO_FEATURES": 2272,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/select_FX02_FEATURE_PACK_A": 0,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/select_FX02_FEATURE_PACK_B": 0,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/select_FX02_SOURCE": 0,
+      "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/switch_FX02_ENABLE": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/bloom_FX03_LIGHTNING": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/callbacks_FX03_LIGHTNING_TREE": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/constant_FX03_LEADER_CONTROL_V43C2": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/constant_FX03_LEADER_INITIAL_STATE_V43C2R1": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/constant_FX03_V43C13_AUDIO": 134,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/constant_FX03_V43C22_ORIGIN_SEED": 185,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/execute_FX03_V47A0_CAUSAL_BEAT_LOCK_SELF_AVOIDING": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/feedback_FX03_LEADER_STATE_V43C2": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LEADER_GUIDE_V43C2": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LEADER_RENDER_V43C2": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LEADER_STATE_V43C2": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LIGHTNING_STORM": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_PACK_BOLT": 1,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_SOURCE_MASK_PREPACK": 1,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C13_BLOOM_MASK": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C13_MASK_AUDIO_PACK": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C21_MASK_GEODESIC_PATH": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C26_ORGANIC_SPLINE_REFINE": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C7_BLOOM_H": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C7_BLOOM_V": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_V43C7_COMPOSITE": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/level_FX03_STORM_POST": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/null_FX03_LEADER_PROOF_V43C2": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/null_FX03_LEADER_STATE_V43C2": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/null_FX03_OUT": 189,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/out1": 81,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/script_FX03_LIGHTNING_TREE": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/select_FX03_AUDIO_MASTER": 434,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/select_FX03_FEATURE_PACK_A": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/select_FX03_FEATURE_PACK_B": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/select_FX03_SOURCE": 0,
+      "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/select_FX03_SUBJECT_MASK": 0,
+      "/project1/MAP_MASTER/04_FX/constant_VIEWER_OFF_TRANSPARENT": 0,
+      "/project1/MAP_MASTER/04_FX/out1": 0,
+      "/project1/MAP_MASTER/04_FX/out_VIEWER_OFF": 0,
+      "/project1/MAP_MASTER/05_ROUTER": 0,
+      "/project1/MAP_MASTER/05_ROUTER/constant_VIEWER_OFF_TRANSPARENT": 0,
+      "/project1/MAP_MASTER/05_ROUTER/null_ROUTER_OUT": 189,
+      "/project1/MAP_MASTER/05_ROUTER/out1": 189,
+      "/project1/MAP_MASTER/05_ROUTER/out_VIEWER_OFF": 0,
+      "/project1/MAP_MASTER/05_ROUTER/ramp_ROUTER_TEST": 0,
+      "/project1/MAP_MASTER/05_ROUTER/select_FX00": 0,
+      "/project1/MAP_MASTER/05_ROUTER/select_FX01": 434,
+      "/project1/MAP_MASTER/05_ROUTER/select_FX02": 434,
+      "/project1/MAP_MASTER/05_ROUTER/select_FX03": 189,
+      "/project1/MAP_MASTER/05_ROUTER/select_RECOVER_FX01_DIRECT": 434,
+      "/project1/MAP_MASTER/05_ROUTER/switch_FX_SELECT": 189,
+      "/project1/MAP_MASTER/06_CONTROL": 0,
+      "/project1/MAP_MASTER/06_CONTROL/constant_FX_PARAMS": 0,
+      "/project1/MAP_MASTER/06_CONTROL/constant_MASTER": 0,
+      "/project1/MAP_MASTER/06_CONTROL/constant_ROUTER": 0,
+      "/project1/MAP_MASTER/06_CONTROL/merge_CONTROL_BUS": 0,
+      "/project1/MAP_MASTER/06_CONTROL/null_CONTROL_BUS": 0,
+      "/project1/MAP_MASTER/06_CONTROL/out1": 0,
+      "/project1/MAP_MASTER/07_OUTPUT": 0,
+      "/project1/MAP_MASTER/07_OUTPUT/constant_VIEWER_OFF_TRANSPARENT": 0,
+      "/project1/MAP_MASTER/07_OUTPUT/glsl_FORCE_ALPHA_OPAQUE": 82,
+      "/project1/MAP_MASTER/07_OUTPUT/level_MASTER": 189,
+      "/project1/MAP_MASTER/07_OUTPUT/level_OUTPUT_FINAL": 189,
+      "/project1/MAP_MASTER/07_OUTPUT/null_OUTPUT_FINAL": 189,
+      "/project1/MAP_MASTER/07_OUTPUT/out1": 81,
+      "/project1/MAP_MASTER/07_OUTPUT/out_VIEWER_OFF": 0,
+      "/project1/MAP_MASTER/07_OUTPUT/ramp_OUTPUT_TEST": 0,
+      "/project1/MAP_MASTER/07_OUTPUT/select_INPUT_SAFE": 0,
+      "/project1/MAP_MASTER/07_OUTPUT/select_RECOVER_ROUTER_OUT": 81,
+      "/project1/MAP_MASTER/07_OUTPUT/select_ROUTER_OUT": 189,
+      "/project1/MAP_MASTER/07_OUTPUT/select_ROUTER_TO_OUTPUT": 81,
+      "/project1/MAP_MASTER/07_OUTPUT/switch_FORCE_OPAQUE": 189,
+      "/project1/MAP_MASTER/07_OUTPUT/switch_OUTPUT_SOURCE": 189,
+      "/project1/MAP_MASTER/90_ARCHIVE": 0,
+      "/project1/MAP_MASTER/99_DEBUG": 0,
+      "/project1/MAP_MASTER/99_DEBUG/constant_VIEWER_OFF_TRANSPARENT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/out_VIEWER_OFF": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_DEEP_FX_AUDIT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_DEEP_ROUTER_AUDIT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V021_LOCAL_FX": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V022_BRIGHT_LOCAL_FX": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V023_STAGE1_REAL_PSY_FX": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V024_REAL_FX_ON_PROVEN_PATH": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V025_MOTION_LAYER": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V027_DIRECT_MOTION": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_AUDIT_V028_OVERSCAN_MOTION_EDGES": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_HOUSEKEEPING_LOG": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V011_ANIMATION_CONTROL": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V012_VISIBLE_ANIMATION": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V013_MATH_EXPRESSIONS": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V014_FORCE_ALPHA": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V015_OUTPUT_SAFE_SWITCH": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V016_DIRECT_OUTPUT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V017_CLEAN_OUTPUT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V018_FORCE_FX_ALPHA": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V019_CLEAN_ROUTER": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V020_FX_VISIBLE_TEST": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V021_LOCAL_VISIBLE_FX": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V022_BRIGHT_LOCAL_FX": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V023_STAGE1_REAL_PSY_FX": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V024_REAL_FX_ON_PROVEN_PATH": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V025_MOTION_LAYER": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V027_DIRECT_MOTION": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V028_OVERSCAN_MOTION_EDGES": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V029_FX01_REAL_IMAGE_MAGENTA_SLIME": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V030_FX01_COMPILE_REPAIR_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V031_FX01_LAYERED_MOTION_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V032_ASSET_WIRE_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V033_GLOBAL_ASSET_REWIRE_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_ENGINE_V034_NOANIM_EXACT_BASE_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_FORCE_NODEVIEW_WAV_AUDIO_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_GLSL_FIX_v011": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_INSTALL_LOG": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_MASTER_CLEAN_AUDIO_FEATURES_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_MASTER_DASHBOARD_LAYOUT_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_MASTER_OVERVIEW_AUDIO_FEATURE_OUT_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_MASTER_PREVIEW_OUTPUTS_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_MASTER_VIEWER_AUDIO_FIX_REPORT": 0,
+      "/project1/MAP_MASTER/99_DEBUG/text_V012_TEST_DEFAULTS": 0,
+      "/project1/MAP_MASTER/README": 0,
+      "/project1/MAP_MASTER/README/text_README_CURRENT": 0,
+      "/project1/MAP_MASTER/preview_00_INPUT_STAGE_BASE": 0,
+      "/project1/MAP_MASTER/preview_01_MASK_NOANIM": 0,
+      "/project1/MAP_MASTER/preview_02_ANALYSIS_MAIN": 0,
+      "/project1/MAP_MASTER/preview_03_AUDIO_FEATURES": 2272,
+      "/project1/MAP_MASTER/preview_03_AUDIO_FEATURES1": 0,
+      "/project1/MAP_MASTER/preview_03_AUDIO_FEATURES2": 2271,
+      "/project1/MAP_MASTER/preview_04_FX_ACTIVE_FX01": 2271,
+      "/project1/MAP_MASTER/preview_05_ROUTER_ACTIVE": 189,
+      "/project1/MAP_MASTER/preview_06_CONTROL_BUS": 0,
+      "/project1/MAP_MASTER/preview_07_OUTPUT_FINAL": 189,
+      "/project1/MAP_MASTER/text_MASTER_RECOVERY_NOTE": 0,
+      "/project1/TD_CODEX_BRIDGE": 0
+    },
+    "top_runtime_cook_deltas": [
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/merge_AUDIO_MASTER_FEATURES_V27",
+        "cook_delta": 2273
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_MASTER_FEATURES_V27",
+        "cook_delta": 2273
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_TEMPO_STATE_OUT_V43B3R3",
+        "cook_delta": 2273
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_TEMPO_STATE_OUT_V43B3R3",
+        "cook_delta": 2273
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/select_AUDIO_GOLDCLASS_PREVIEW",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/script_GOLDCLASS_ENGINE",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLDCLASS_SOURCE",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/audiofilein1",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_FEATURES_REAL",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27A",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_MASTER_FEATURES_V27B",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/lag_AUDIO_FAST_40MS",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/lag_AUDIO_SLOW_600MS",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/merge_AUDIO_FEATURES",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/merge_AUDIO_GOLDCLASS_TEMPO_V06",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIOFILE_RAW",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_FEATURES",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_GOLDCLASS_V02_ALL",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_GOLDCLASS_V06_ALL",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_TEMPO_LOCK_V06",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_SANITIZE_V06",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_TEMPO_LOCK_V06",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_GOLDCLASS_V02_ALL",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_RAW_TEMPO_V06",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/glsl_FX02_ORBIT_3D_LIGHTS",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/lag_FX02_AUDIO_SMOOTH",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/null_FX02_AUDIO_MOD",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/select_FX02_AUDIO_FEATURES",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/preview_03_AUDIO_FEATURES",
+        "cook_delta": 2272
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/null_AUDIO_GOLDCLASS_FEATURES",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/out1",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/script_AUDIO_GOLDCLASS",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/select_AUDIO_GOLD_SOURCE",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLDCLASS_ALL",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/out1",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/audiodevout1",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/constant_AUDIO_ADAPTIVE_FEATURES_V26",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/execute_AUDIO_ADAPTIVE_ANALYZER_V26",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/execute_AUDIO_MASTER_BUS_V27",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/execute_AUDIO_TEMPO_STATE_V43B3R3",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_DEBUG_BUS",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_FAST_BPM_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_GOLDCLASS_FEATURES",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/null_AUDIO_OUT",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/out1",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/script_AUDIO_DEBUG_BUS",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_GOLDCLASS_FEATURES",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/select_AUDIO_RAW_FAST_BPM_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/trail_AUDIO_DEBUG_HISTORY",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/feedback_FX01_ORIGINAL_BLUR_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/feedback_FX01_ORIGINAL_STATE_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_BLUR_H_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_BLUR_V_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_COMPOSITE_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_SHADE_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/glsl_FX01_ORIGINAL_SIM_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/level_FX01_MASTER_POST",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_BLUR_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_OUT_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_ORIGINAL_STATE_V04",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/null_FX01_OUT",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/preview_03_AUDIO_FEATURES2",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/preview_04_FX_ACTIVE_FX01",
+        "cook_delta": 2271
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V01/trail_AUDIO_GOLDCLASS_HISTORY",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_BPM",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_BREATH",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_DRIVES",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_FAST",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_FEEL",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_HITS",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_NORM",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_RAW",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_SLOW",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_SMOOTH",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/null_GOLD_SYS",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_BPM",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_BREATH",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_DRIVES",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_FAST",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_FEEL",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_HITS",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_NORM",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_RAW",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_SLOW",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_SMOOTH",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/03_AUDIO/GG_AUDIO_GOLDCLASS_V02/select_GOLD_SYS",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_01_SLIME_MASK/out1",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/level_FX02_ORBIT_3D_POST",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/null_FX02_ORBIT_3D_PREVIEW",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/null_FX02_OUT",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/out1",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_02_ORBITING_3D_LIGHTS/switch_FX02_ENABLE",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/bloom_FX03_LIGHTNING",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/constant_FX03_LEADER_CONTROL_V43C2",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/feedback_FX03_LEADER_STATE_V43C2",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LEADER_GUIDE_V43C2",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LEADER_STATE_V43C2",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/glsl_FX03_LIGHTNING_STORM",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/level_FX03_STORM_POST",
+        "cook_delta": 434
+      },
+      {
+        "path": "/project1/MAP_MASTER/04_FX/FX_03_LIGHTNING_STORM/null_FX03_LEADER_STATE_V43C2",
+        "cook_delta": 434
+      }
+    ]
+  },
+  "health_end": {
+    "errors": 0,
+    "warnings": 0,
+    "overlaps": 8
+  },
+  "health_diff": {
+    "new_errors": [],
+    "resolved_errors": [],
+    "new_warnings": [],
+    "resolved_warnings": [],
+    "new_overlaps": [],
+    "resolved_overlaps": [],
+    "structure_start_sha256": "a0b4c9ec916f05a37e45cb2bfd2a2fc62ca28ab17de7f3f0241090ece15370d0",
+    "structure_end_sha256": "be6d2853c968352fd40ddd3c1729d2f871f8ced71cad6a97b089595d8c979d9d",
+    "structure_changed": true,
+    "operator_count_start": 551,
+    "operator_count_end": 551,
+    "project_modified_state_start": {
+      "modified": true
+    },
+    "project_modified_state_end": {
+      "modified": true
+    }
+  },
+  "toe_copy": {
+    "source": "D:\\Desktop\\td-bridge\\outputs\\saves\\GG_POST_GG_V47A3_APERIODIC_MULTISCALE_DISCHARGE_POLISH_07.08.2026_00-32-53.1.toe",
+    "copied": true,
+    "project_modified_state": {
+      "modified": true
+    },
+    "note": "Die TOE-Kopie bildet nur den zuletzt gespeicherten On-Disk-Stand ab. Live TOX-Exporte erfassen zusätzlich den aktuellen Netzwerkstand.",
+    "target": "02_toe_copy\\GG_POST_GG_V47A3_APERIODIC_MULTISCALE_DISCHARGE_POLISH_07.08.2026_00-32-53.1.toe",
+    "bytes": 473668,
+    "sha256": "3e8df0a248db652073229a59c57172eddc9a3542cc276513507f64639d81dd95"
+  },
+  "tox_exports": {
+    "count": 20,
+    "successful": 19,
+    "failed_required": 0,
+    "missing_or_failed_optional": 1
+  },
+  "dat_count": 289,
+  "dependency_count": 73,
+  "dependency_missing": 66,
+  "partial_reasons": [],
+  "important_note": "Errors, warnings, overlaps and visual failure were exported as data and did not block ZIP creation."
+}

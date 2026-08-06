@@ -4,7 +4,7 @@ Professionelles, modulares TouchDesigner-System für Projection Mapping, VJ-Visu
 
 ## Aktuelle Version
 
-**MapMaster v1.0.0 – Stable Production Baseline**
+**MapMaster v1.1.0 – V47A3 Lightning Checkpoint**
 
 TouchDesigner-Build:
 
@@ -15,21 +15,19 @@ TouchDesigner-Build:
 Milestone:
 
 ```text
-GG_POST_MAP_MASTER_V39E2_FINAL_CLEANUP_19.07.2026_10-54-59.toe
+GG_POST_GG_V47A3_APERIODIC_MULTISCALE_DISCHARGE_POLISH_07.08.2026_00-32-53.1.toe
 ```
 
 ## Verifizierter Projektstatus
 
-- 0 Fehler
-- 0 Warnungen
-- 0 Node-Überlappungen
-- Topologie unverändert
-- Node-Größen unverändert
-- Parameterstruktur unverändert
-- Shader-, Callback- und Code-DAT-Inhalte unverändert
-- archivierte und Test-COMPs vom Cooking getrennt
-- FX01-Ausgabe valide bei 1920 × 1080
-- finaler Output valide bei 1920 × 1080
+- 0 Fehler und 0 Warnungen im V47Z0-Deep-Export
+- 451 Runtime-Samples ohne Ausfall
+- 58,32 FPS während des 45-Sekunden-Referenzlaufs
+- stabiler Router auf FX03
+- echte ungeclampte BPM-Auslesung einschließlich 200-BPM-Referenztrack
+- kausale, audioqualifizierte Blitzereignisse
+- keine beobachteten Spiralen, geschlossenen Pfade oder Rückwärtsanimationen
+- aperiodische Mehrskalen-Tortuosität und strike-stabile Restrikes
 
 ## Projektstruktur
 
@@ -63,9 +61,12 @@ GG_POST_MAP_MASTER_V39E2_FINAL_CLEANUP_19.07.2026_10-54-59.toe
 ## Versionierte Dateien
 
 ```text
-project/MAP_MASTER_v1.0.0.toe
-docs/VERIFY_REPORT_v1.0.0.json
-docs/RELEASE_NOTES_v1.0.0.md
+project/MAP_MASTER_v1.1.0.toe
+docs/RELEASE_NOTES_v1.1.0.md
+docs/v1.1.0/PROJECT_DOSSIER_V47A3.md
+docs/v1.1.0/HANDOVER_PROTOCOL_V47A3.md
+docs/v1.1.0/VERIFY_REPORT_V47Z0.json
+releases/v1.1.0/MAP_MASTER_V47Z0_FINAL_HANDOVER_DEEP_EXPORT_*.zip
 CHANGELOG.md
 VERSION
 ```
@@ -77,6 +78,7 @@ TouchDesigner-Projektdateien werden über Git LFS verwaltet:
 ```text
 *.toe
 *.tox
+*.zip
 ```
 
 Nach dem Klonen:
@@ -92,13 +94,15 @@ git lfs pull
 
 Produktiv und aktiv.
 
-### FX02 – Psy Clean Post
+### FX02 – Orbiting 3D Lights
 
-Strukturell vorbereitet und aufgeräumt.
+Vorhanden und weiterhin Teil der modularen Effektstruktur.
 
-### FX03 – Electric Arcs
+### FX03 – Lightning Storm
 
-Strukturell vorbereitet und aufgeräumt.
+V47A3 ist als stabiler, stilisiert-realistischer und live-tauglicher
+Lightning-Checkpoint eingefroren. Der aktive V47A2-Controller nutzt echte BPM,
+audioqualifizierte Transienten, gelatchte Hauptkanäle und Same-Channel-Restrikes.
 
 ## Entwicklungsregeln
 
