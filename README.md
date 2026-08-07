@@ -4,7 +4,7 @@ Professionelles, modulares TouchDesigner-System für Projection Mapping, VJ-Visu
 
 ## Aktuelle Version
 
-**MapMaster v1.1.0 – V47A3 Lightning Checkpoint**
+**MapMaster v1.1.1 – V49Z0 Current Project Handover**
 
 TouchDesigner-Build:
 
@@ -15,19 +15,18 @@ TouchDesigner-Build:
 Milestone:
 
 ```text
-GG_POST_GG_V47A3_APERIODIC_MULTISCALE_DISCHARGE_POLISH_07.08.2026_00-32-53.1.toe
+MAP_MASTER_V49Z0_CURRENT_PROJECT_HANDOVER_DEEP_EXPORT_07.08.2026_04-49-26.zip
 ```
 
 ## Verifizierter Projektstatus
 
-- 0 Fehler und 0 Warnungen im V47Z0-Deep-Export
+- 0 Fehler und 0 Warnungen im V49Z0-Deep-Export
 - 451 Runtime-Samples ohne Ausfall
-- 58,32 FPS während des 45-Sekunden-Referenzlaufs
-- stabiler Router auf FX03
-- echte ungeclampte BPM-Auslesung einschließlich 200-BPM-Referenztrack
-- kausale, audioqualifizierte Blitzereignisse
-- keine beobachteten Spiralen, geschlossenen Pfade oder Rückwärtsanimationen
-- aperiodische Mehrskalen-Tortuosität und strike-stabile Restrikes
+- 56,31 FPS während des 45-Sekunden-Referenzlaufs
+- aktueller Router-Snapshot auf FX11 dokumentiert
+- akzeptierter FX03-Lightning-Checkpoint bleibt erhalten
+- native Shaderbank FX04 bis FX11 dokumentiert
+- neues Übergabedossier und Masterprompt für nahtlosen Neustart in frischem Chat
 
 ## Projektstruktur
 
@@ -41,7 +40,7 @@ GG_POST_GG_V47A3_APERIODIC_MULTISCALE_DISCHARGE_POLISH_07.08.2026_00-32-53.1.toe
 ├─ 05_ROUTER
 ├─ 06_CONTROL
 ├─ 07_OUTPUT
-└─ 99_DEBUG
+└─ TD_CODEX_BRIDGE
 ```
 
 ## Hauptfunktionen
@@ -62,11 +61,11 @@ GG_POST_GG_V47A3_APERIODIC_MULTISCALE_DISCHARGE_POLISH_07.08.2026_00-32-53.1.toe
 
 ```text
 project/MAP_MASTER_v1.1.0.toe
-docs/RELEASE_NOTES_v1.1.0.md
-docs/v1.1.0/PROJECT_DOSSIER_V47A3.md
-docs/v1.1.0/HANDOVER_PROTOCOL_V47A3.md
-docs/v1.1.0/VERIFY_REPORT_V47Z0.json
-releases/v1.1.0/MAP_MASTER_V47Z0_FINAL_HANDOVER_DEEP_EXPORT_*.zip
+docs/RELEASE_NOTES_v1.1.1.md
+docs/v1.1.1/PROJECT_DOSSIER_V49Z0.md
+docs/v1.1.1/MASTERPROMPT_V49Z0.txt
+docs/v1.1.1/VERIFY_REPORT_V49Z0.json
+releases/v1.1.1/MAP_MASTER_V49Z0_CURRENT_PROJECT_HANDOVER_DEEP_EXPORT_*.zip
 CHANGELOG.md
 VERSION
 ```
@@ -100,9 +99,15 @@ Vorhanden und weiterhin Teil der modularen Effektstruktur.
 
 ### FX03 – Lightning Storm
 
-V47A3 ist als stabiler, stilisiert-realistischer und live-tauglicher
-Lightning-Checkpoint eingefroren. Der aktive V47A2-Controller nutzt echte BPM,
-audioqualifizierte Transienten, gelatchte Hauptkanäle und Same-Channel-Restrikes.
+V47A3 bleibt der akzeptierte, stilisiert-realistische und live-taugliche
+Lightning-Checkpoint. Der neue V49Z0-Handover konserviert diesen Stand und
+dokumentiert die Regeln für Folgearbeit in einem frischen Chat.
+
+### FX04 bis FX11 – Native Shaderbank
+
+Die aktuelle Projektlinie enthält eine native Shaderbank mit dokumentierten
+Effekten von Mapping Master über Physarum/Saber-Varianten bis Electric Contour
+Arcs und Clean Pack.
 
 ## Entwicklungsregeln
 
