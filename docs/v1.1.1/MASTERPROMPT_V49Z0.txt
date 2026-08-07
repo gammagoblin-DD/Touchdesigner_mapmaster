@@ -1,0 +1,82 @@
+Du übernimmst das TouchDesigner-Projekt MAP_MASTER in einem laufenden Produktionskontext.
+
+Arbeite so, als hättest du keinerlei Gesprächshistorie, aber Zugriff auf ein Deep-Export-Paket, Projektberichte, POST-TOE-Dateien und dieses Handover.
+
+Ziele:
+
+1. Verstehe den aktuellen Projektzustand ohne Vorannahmen.
+2. Arbeite nur auf Basis nachweisbarer Struktur, Reports und Medien-Evidenz.
+3. Erhalte stabile, bereits akzeptierte Module.
+4. Vermeide frühere Fehler des Projekts konsequent.
+
+Wichtige Regeln:
+
+- Antworte auf Deutsch.
+- Behandle alle Dateien unter `sources/` als read-only.
+- Lade keine alte `.tox`- oder `.toe`-Quelle als eingebettete Altstruktur in das neue Projekt.
+- Nutze Altstände nur als Shader-/Referenzquelle.
+- Gehe davon aus, dass `FX_03_LIGHTNING_STORM` auf V47A3 ein akzeptierter stabiler Lightning-Checkpoint ist.
+- Gehe nicht davon aus, dass der Router bereits wieder live über den `fx_index`-Bus gesteuert wird. Prüfe den tatsächlichen Router-Modus.
+- Verwechsle technische Audio-Reaktion nicht mit guter wahrnehmbarer Audio-Reaktion.
+- Verändere nie mehrere große Risikobereiche gleichzeitig, wenn ein isolierter Patch ausreicht.
+- Vor jedem destruktiven Eingriff erst read-only prüfen, PRE-Checkpoint anlegen, dann patchen.
+
+Projektkontext:
+
+- MAP_MASTER ist modular aufgebaut in Input, Mask, Analysis, Audio, FX, Router, Control und Output.
+- Patches werden über die TD-Bridge ausgeführt.
+- Ausführungsordner für Bridge-Scripte:
+  `D:\Desktop\td-bridge\outputs\td_bridge\inbox`
+- Trigger:
+  `/project1/TD_CODEX_BRIDGE/text_RUN_PENDING`
+
+Der wichtigste aktuelle technische Stand:
+
+- V49A1R1 integrierte eine native Shaderbank von FX04 bis FX11.
+- V49A2R2 bereinigte historische Altlasten kontrolliert.
+- V49B0R1 polierte FX05, FX06, FX07, FX08 und FX10 technisch nach.
+- FX04, FX09 und FX11 wurden dabei bewusst nicht verändert.
+- Der letzte bekannte validierte Router-Zustand bewahrte Index 11 im CONSTANT-Modus.
+
+Aktive/maßgebliche Shaderbank:
+
+- FX04 Mapping Master
+- FX05 Shadertoy Surface
+- FX06 Physarum Surface
+- FX07 Saber Outline
+- FX08 Saber Path
+- FX09 Orbiting Relief Lights
+- FX10 Electric Contour Arcs
+- FX11 Clean Pack
+
+Wichtige Lightning-Erkenntnisse aus der Projektgeschichte:
+
+- Keine Spiralen, aufgerollten Äste, Rückläufe oder Pop-up-Verästelungen ohne Hauptstrang.
+- Hauptstrang zuerst, Äste nur nachgeordnet.
+- Restrikes auf gleichem Kanal, kein sichtbarer Komplettneuaufbau.
+- BPM nicht über normalisierte 0..1-Auslesung klemmen.
+
+Dein Arbeitsablauf in einer neuen Session:
+
+1. Lies zuerst das Projektdossier und das Übergabeprotokoll.
+2. Lies das aktuelle Deep-Export-Paket gründlich.
+3. Extrahiere daraus die reale aktuelle Projektstruktur.
+4. Prüfe Router, Audio-Pfade, Shaderbank, FX03-Status und Output-Vertrag.
+5. Wenn der Nutzer "weiterarbeiten" sagt, beginne mit einem read-only Audit des betroffenen Moduls.
+6. Nur wenn der Befund klar ist, erzeuge einen kleinen, isolierten Patch.
+7. Nach jedem Patch: Report, Last-Status, POST-TOE und wenn möglich Video mit Audio prüfen.
+
+Wenn der Nutzer ohne weitere Eingrenzung "weiter" sagt, priorisiere:
+
+1. tatsächlichen Router-/Control-Bus-Zustand prüfen
+2. Shaderbank-Status validieren
+3. qualitativ schwächere V49-Effekte mit Video+Audio gegen ihre Zielidentität prüfen
+
+Wenn dir Informationen fehlen, fordere zuerst die kleinstmögliche Evidenz an:
+
+- aktuelles Report-JSON
+- Last-Status-Datei
+- frisches Video mit Audio
+- oder einen neuen read-only Deep Export
+
+Arbeite streng evidenzbasiert und so, dass das Projekt nahtlos fortgeführt werden kann, ohne frühere Fehler erneut zu erzeugen.

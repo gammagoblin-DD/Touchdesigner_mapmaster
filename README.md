@@ -4,7 +4,7 @@ Professionelles, modulares TouchDesigner-System für Projection Mapping, VJ-Visu
 
 ## Aktuelle Version
 
-**MapMaster v1.0.0 – Stable Production Baseline**
+**MapMaster v1.1.1 – V49Z0 Current Project Handover**
 
 TouchDesigner-Build:
 
@@ -15,21 +15,18 @@ TouchDesigner-Build:
 Milestone:
 
 ```text
-GG_POST_MAP_MASTER_V39E2_FINAL_CLEANUP_19.07.2026_10-54-59.toe
+MAP_MASTER_V49Z0_CURRENT_PROJECT_HANDOVER_DEEP_EXPORT_07.08.2026_04-49-26.zip
 ```
 
 ## Verifizierter Projektstatus
 
-- 0 Fehler
-- 0 Warnungen
-- 0 Node-Überlappungen
-- Topologie unverändert
-- Node-Größen unverändert
-- Parameterstruktur unverändert
-- Shader-, Callback- und Code-DAT-Inhalte unverändert
-- archivierte und Test-COMPs vom Cooking getrennt
-- FX01-Ausgabe valide bei 1920 × 1080
-- finaler Output valide bei 1920 × 1080
+- 0 Fehler und 0 Warnungen im V49Z0-Deep-Export
+- 451 Runtime-Samples ohne Ausfall
+- 56,31 FPS während des 45-Sekunden-Referenzlaufs
+- aktueller Router-Snapshot auf FX11 dokumentiert
+- akzeptierter FX03-Lightning-Checkpoint bleibt erhalten
+- native Shaderbank FX04 bis FX11 dokumentiert
+- neues Übergabedossier und Masterprompt für nahtlosen Neustart in frischem Chat
 
 ## Projektstruktur
 
@@ -43,7 +40,7 @@ GG_POST_MAP_MASTER_V39E2_FINAL_CLEANUP_19.07.2026_10-54-59.toe
 ├─ 05_ROUTER
 ├─ 06_CONTROL
 ├─ 07_OUTPUT
-└─ 99_DEBUG
+└─ TD_CODEX_BRIDGE
 ```
 
 ## Hauptfunktionen
@@ -63,9 +60,12 @@ GG_POST_MAP_MASTER_V39E2_FINAL_CLEANUP_19.07.2026_10-54-59.toe
 ## Versionierte Dateien
 
 ```text
-project/MAP_MASTER_v1.0.0.toe
-docs/VERIFY_REPORT_v1.0.0.json
-docs/RELEASE_NOTES_v1.0.0.md
+project/MAP_MASTER_v1.1.0.toe
+docs/RELEASE_NOTES_v1.1.1.md
+docs/v1.1.1/PROJECT_DOSSIER_V49Z0.md
+docs/v1.1.1/MASTERPROMPT_V49Z0.txt
+docs/v1.1.1/VERIFY_REPORT_V49Z0.json
+releases/v1.1.1/MAP_MASTER_V49Z0_CURRENT_PROJECT_HANDOVER_DEEP_EXPORT_*.zip
 CHANGELOG.md
 VERSION
 ```
@@ -77,6 +77,7 @@ TouchDesigner-Projektdateien werden über Git LFS verwaltet:
 ```text
 *.toe
 *.tox
+*.zip
 ```
 
 Nach dem Klonen:
@@ -92,13 +93,21 @@ git lfs pull
 
 Produktiv und aktiv.
 
-### FX02 – Psy Clean Post
+### FX02 – Orbiting 3D Lights
 
-Strukturell vorbereitet und aufgeräumt.
+Vorhanden und weiterhin Teil der modularen Effektstruktur.
 
-### FX03 – Electric Arcs
+### FX03 – Lightning Storm
 
-Strukturell vorbereitet und aufgeräumt.
+V47A3 bleibt der akzeptierte, stilisiert-realistische und live-taugliche
+Lightning-Checkpoint. Der neue V49Z0-Handover konserviert diesen Stand und
+dokumentiert die Regeln für Folgearbeit in einem frischen Chat.
+
+### FX04 bis FX11 – Native Shaderbank
+
+Die aktuelle Projektlinie enthält eine native Shaderbank mit dokumentierten
+Effekten von Mapping Master über Physarum/Saber-Varianten bis Electric Contour
+Arcs und Clean Pack.
 
 ## Entwicklungsregeln
 
