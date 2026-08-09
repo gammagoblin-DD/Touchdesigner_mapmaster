@@ -4,6 +4,32 @@ Alle wichtigen Änderungen dieses Projekts werden hier dokumentiert.
 
 Das Projekt orientiert sich an Semantic Versioning.
 
+## [1.1.0-pre-cleanup] – 09.08.2026
+
+### Checkpoint
+
+- aktueller Projektstand vor neuen Features und Aufräumarbeiten gesichert
+- Stand basiert auf `GG_POST_GG_V49D2R3_FX08_UNROLLED_EXTRACTED_PATH_RESERVED_WORD_FIX_09.08.2026_03-06-50.1.toe`
+- V49Z2 Deep Export als Analyse- und Handover-Basis referenziert
+- Projektziel als modulares, audioreaktives Mapping-/Live-Visual-Instrument dokumentiert
+
+### Current State
+
+- Router läuft im Expression-Modus über `null_CONTROL_BUS['fx_index']`
+- aktiver Router-Index im V49Z2-Export: `4` / `FX04_MAPPING_MASTER`
+- finaler Output: 1920 × 1080, RGBA16F
+- Audio-Master-Bus vorhanden: `null_AUDIO_MASTER_FEATURES_V27`
+- FX08 ist bei `GG_V49D2R3` geparkt: technisch lauffähig, visuell nicht final
+
+### Known Next Architecture Work
+
+- Input-/Maskenstruktur muss bereinigt werden
+- normale Stage-Fotos sollen ohne transparenten Hintergrund funktionieren
+- Pink-/NoAnim-Maske soll offizielle Begrenzungs- und Kantenreferenz werden
+- doppelte Input-Nodes und unklare Previews müssen reduziert werden
+- Network-Boxes müssen logisch, farbig und überlagerungsfrei angeordnet werden
+- Erweiterbarkeit für mehrere Beamer, flexible Audioanalyse und spätere UI muss berücksichtigt werden
+
 ## [1.0.0] – 19.07.2026
 
 ### Added

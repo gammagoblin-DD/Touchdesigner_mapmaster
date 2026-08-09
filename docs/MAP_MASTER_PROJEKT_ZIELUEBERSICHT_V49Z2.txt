@@ -1,0 +1,996 @@
+MAP_MASTER – PROJEKT- UND ZIELÜBERSICHT V49Z2
+Stand: 09.08.2026
+
+Quelle:
+- V49Z2 Deep Export:
+  D:\Desktop\td-bridge\outputs\deep_exports\MAP_MASTER_V49Z2_FULL_PROJECT_ERROR_AUDIT_DEEP_EXPORT_09.08.2026_03-11-37.zip
+- V49Z2 Reports und Handover-Dateien
+- bisherige Projektarbeit im aktuellen TouchDesigner/Codex-Verlauf
+
+
+1. GRUNDIDEE DES PROJEKTS
+
+MAP_MASTER ist kein einzelner Shader und kein simples VJ-Preset.
+Das Projekt ist als audioreaktives TouchDesigner-Live-Visual-System für
+Projection Mapping, Festival-/Club-Visuals und performative Echtzeitgrafik
+gedacht.
+
+Der Kern ist ein modularer Live-Visual-Organismus:
+
+- Ein Inputbild oder Objekt wird analysiert.
+- Aus dem Input entstehen Maske, Tiefe, Normalen, Konturen und Hilfsdaten.
+- Audio wird in musikalisch sinnvolle Steuersignale übersetzt.
+- Mehrere Effekte nutzen dieselbe gemeinsame Analysebasis.
+- Ein Router schaltet live zwischen Effekten.
+- Alle Effekte sollen visuell eigenständig sein, aber aus derselben Projektlogik kommen.
+
+Das Ziel ist ein stabiles, live spielbares Effektinstrument, nicht nur eine
+Sammlung einzelner Shader.
+
+
+2. ZIELBILD AM ENDE
+
+Am Ende soll MAP_MASTER ein Festival-/Mapping-taugliches System sein, bei dem
+man mit beliebigen oder wechselnden Inputbildern arbeiten kann und trotzdem
+saubere, kontrollierte, audioreaktive Looks bekommt.
+
+Das finale System soll:
+
+- live stabil laufen,
+- bei 1920x1080 zuverlässig performen,
+- mit Masken und Objektkonturen sauber interagieren,
+- auf Musik glaubwürdig reagieren,
+- mehrere optisch klar unterscheidbare Effekte besitzen,
+- über einen zentralen Control-Bus steuerbar sein,
+- nicht bei jedem Effekt neu verkabelt werden müssen,
+- per TD-Bridge reproduzierbar gepatcht, exportiert und versioniert werden können.
+- maximal flexibel für spätere Updates bleiben,
+- neue Effekte aufnehmen können, ohne die bestehende Architektur zu beschädigen,
+- bestehende Effekte optimieren können, ohne Router/Audio/Output neu bauen zu müssen,
+- den Audioanalyser verbessern können, ohne bestehende Effekte zu crashen,
+- als Projektordner verschiebbar bleiben, ohne interne Pfadstruktur zu zerstören.
+
+Die künstlerische Richtung ist:
+
+- präzise,
+- haptisch,
+- dunkel,
+- kontrastreich,
+- energiegeladen,
+- mappingfähig,
+- nicht generisches Shader-Spielzeug.
+
+
+3. VISUELLE LEITIDEE
+
+Das Projekt soll nicht wie ein Standard-VJ-Shader aussehen, der einfach über ein
+Bild gelegt wird. Die Effekte sollen aus dem Objekt selbst kommen.
+
+Das bedeutet:
+
+- Konturen sollen ernst genommen werden.
+- Masken sollen visuell führend sein.
+- Der Effekt soll den Körper / Käfer / das Objekt lesen.
+- Licht, Blitze, Linien, Relief und Energie sollen an der Form haften.
+- Schwarzer Grundzustand soll wirklich schwarz bzw. transparent sein.
+- Keine unkontrollierten Vollbild-Noise-Flächen.
+- Keine generischen Shadertoy-Flächen, die nur zufällig über dem Input liegen.
+- Keine permanenten Ränder, wenn eigentlich ein wandernder Impuls gemeint ist.
+
+Die richtige Ästhetik ist:
+
+Objekt / Maske / Kontur
+-> Analyse
+-> energetische Reaktion
+-> kontrolliertes Lichtverhalten
+-> musikalisch getaktete Veränderung
+
+Nicht:
+
+Inputbild
+-> beliebiger Shader drüber
+-> etwas flackert
+
+
+3.1 FLEXIBILITÄTS- UND UPDATE-PRINZIP
+
+Das Projekt muss von Anfang an updatefähig gedacht werden.
+
+Jede neue Funktion muss sich in eine stabile Grundarchitektur einfügen:
+
+- neue Effekte dürfen die bestehende FX-Bank nicht destabilisieren,
+- Effektoptimierungen dürfen Router, Audio und Output nicht beschädigen,
+- Audioanalyse darf intern verbessert werden, ohne dass Effekte ihre Eingänge verlieren,
+- Effekte dürfen nicht direkt von instabilen Analyzer-Interna abhängen,
+- globale Parameter müssen über stabile Zwischenbusse bereitgestellt werden,
+- Projektpfade müssen möglichst relativ oder projektlokal organisiert sein,
+- ein Verschieben des Projektordners darf die interne Struktur nicht zerstören.
+
+Zentrale Architekturregel:
+
+Analyzer, Input, Masken, Effekte, Router und Output müssen lose gekoppelt sein.
+Ein Modul darf intern weiterentwickelt werden, solange sein öffentlicher
+Ausgangsvertrag stabil bleibt.
+
+
+4. TECHNISCHER GRUNDAUFBAU
+
+Die Hauptpipeline:
+
+/project1/MAP_MASTER
+  00_INPUT
+  01_MASK
+  02_ANALYSIS
+  03_AUDIO
+  04_FX
+  05_ROUTER
+  06_CONTROL
+  07_OUTPUT
+
+
+4.1 00_INPUT
+
+Hier liegt die visuelle Ausgangsbasis. Das kann ein Testbild, Objekt,
+Käferstruktur, Alpha-Input oder später anderes Bildmaterial sein.
+
+Der Input ist nicht nur Textur, sondern Rohmaterial für die ganze Effektlogik.
+
+Inputbilder sollen im Zielworkflow möglichst unbearbeitet aus Fotos der
+Mappingfläche oder Dekoration entstehen.
+
+Das bedeutet:
+
+- Fotos der Mappingfläche werden direkt eingebunden,
+- das Projekt erzeugt daraus Masken-/Analyseinformationen,
+- manuelle Vorbearbeitung außerhalb TouchDesigner soll möglichst gering bleiben,
+- der Input muss austauschbar sein,
+- andere Projektorte dürfen die internen Referenzen nicht brechen.
+
+
+4.2 01_MASK
+
+Die Maske ist eine der wichtigsten Projektgrundlagen.
+
+Sie bestimmt:
+
+- wo ein Effekt sichtbar sein darf,
+- wo Objektkante und Außenraum liegen,
+- wo transparente/schwarze Bereiche sein müssen,
+- wie stark Effekte an der Form haften.
+
+Viele bisherige Fehlschläge kamen genau daher:
+Effekte waren technisch aktiv, aber haben die Maske nicht wirklich respektiert.
+
+Projektdefinition für Inputmasken:
+
+- Alles, was in Pink dargestellt wird, wird nicht animiert.
+- Pink dient als Vorlage für Maskenkanten, Objektbegrenzung und statische Bereiche.
+- Pinke Bereiche können als Referenzfläche für Konturen, Kanten und nicht zu animierende Bereiche dienen.
+- Effekte müssen diese Maskenlogik respektieren.
+
+Damit entstehen zwei unterschiedliche visuelle Rollen:
+
+1. animierbare Bereiche,
+2. statische bzw. nicht animierte Referenz-/Maskenbereiche.
+
+Diese Unterscheidung muss in der Architektur erhalten bleiben.
+
+
+4.3 02_ANALYSIS
+
+Die Analyse erzeugt Ableitungen des Objekts:
+
+- Luma/Object,
+- Depth Proxy,
+- Gradient,
+- Normal Map,
+- Edge Map,
+- Curvature,
+- Distance Proxy,
+- AO Proxy,
+- Blur H/V,
+- Feature Pack A,
+- Feature Pack B,
+- Contour Output.
+
+Diese Analyseebene ist zentral, weil die Effekte dadurch nicht blind auf
+UV-Koordinaten laufen, sondern auf Forminformationen reagieren können.
+
+
+4.4 03_AUDIO
+
+Audio ist nicht nur Lautstärke. Es ist als musikalischer Feature-Bus gedacht.
+
+Aktuelle Kanäle umfassen u. a.:
+
+- Kick,
+- Bass,
+- Mid,
+- High,
+- Detail,
+- Breath,
+- Motion,
+- Energy,
+- Drop,
+- Breakdown,
+- Tempo/BPM,
+- Pulse,
+- FX-Speed,
+- FX-Intensity.
+
+Wichtiges Ziel:
+Audioreaktivität darf nicht nur numerisch vorhanden sein. Sie muss visuell
+musikalisch lesbar sein.
+
+Ein Effekt kann technisch auf kick_pulse reagieren, aber trotzdem nicht „zum Beat“
+wirken. Das Projektziel verlangt echte Wahrnehmungsqualität.
+
+Wichtige Architekturregel:
+
+Der Audioanalyser selbst darf optimiert oder ersetzt werden, ohne dass alle
+Effekte angepasst werden müssen.
+
+Dafür braucht das Projekt einen stabilen Audio-Master-Bus.
+
+Effekte greifen nicht direkt auf beliebige Analyzer-Interna zu, sondern auf eine
+definierte, stabile Menge von Grundparametern.
+
+Beispiele für stabile Effekt-Audio-Parameter:
+
+- audio_active,
+- audio_amount,
+- energy,
+- kick,
+- bass,
+- mid,
+- high,
+- pulse,
+- breath,
+- motion,
+- beat_event,
+- drop,
+- breakdown,
+- bpm,
+- tempo_confidence.
+
+Wenn der Analyzer später verbessert wird, muss er diese Werte weiter liefern
+oder sauber auf sie mappen. Dadurch bleiben Effekte kompatibel.
+
+Audioquellen:
+
+- aktuell: Audiofile zum Testen,
+- später: Live-Audiosignal vom DJ bzw. Audio-Device,
+- optional weitere Quellen über ein auswählbares Source-System.
+
+Das System muss Audiofile und Live-Device unterscheiden können, ohne die
+Effektlogik zu ändern.
+
+
+4.5 04_FX
+
+Hier liegt die Effektbank.
+
+Aktuell gibt es 12 Router-Slots:
+
+FX00 Bypass
+FX01 Slime Mask
+FX02 Orbiting 3D Lights
+FX03 Lightning Storm
+FX04 Mapping Master
+FX05 Shadertoy Surface
+FX06 Physarum Surface
+FX07 Saber Outline
+FX08 Saber Path
+FX09 Orbiting Relief Lights
+FX10 Electric Contour Arcs
+FX11 Clean Pack
+
+Die FX-Bank ist der kreative Kern des Systems.
+
+Grundregeln für Effekte:
+
+- Effekte greifen auf Inputbilder und Masken zu.
+- Effekte bauen auf Analyse-Maps auf.
+- Effekte greifen auf definierte Audio-Master-Parameter zu.
+- Effekte bieten pro Effekt eigene Einstellungsparameter.
+- Effekte müssen optimierbar bleiben.
+- Nicht aktive Effekte sollen deaktiviert oder zumindest vom aktiven Cook-Pfad getrennt werden.
+- Nicht aktive Effekte sollen nicht unnötig parallel weiterrechnen.
+
+Damit ist die FX-Bank nicht nur eine Liste von Shadern, sondern ein modulares
+Effekt-Rack mit klaren Verträgen:
+
+- Input-Vertrag,
+- Masken-Vertrag,
+- Analyse-Vertrag,
+- Audio-Vertrag,
+- Parameter-Vertrag,
+- Output-Vertrag,
+- Performance-Vertrag.
+
+
+4.6 05_ROUTER
+
+Der Router entscheidet, welcher Effekt live sichtbar ist.
+
+Aktueller V49Z2-Befund:
+
+- Router ist expression-getrieben.
+- Router hängt korrekt am Control-Bus.
+- Aktiver Index im Export war 4.
+- Aktiver Effekt war FX04_MAPPING_MASTER.
+
+Wenn ein anderer Effekt erwartet wird, muss zuerst fx_index geprüft werden.
+
+Ziel-Router:
+
+- wählt aktive Effekte aus,
+- erlaubt später die Kombination mehrerer Effekte,
+- unterstützt Grundmischungen wie A/B, Blend, Add, Screen, Masked Mix oder Layering,
+- muss klar vom Control-Bus steuerbar sein,
+- darf nicht dauerhaft alle Effekte teuer parallel berechnen, wenn sie nicht benötigt werden.
+
+Langfristig soll der Router nicht nur ein einzelner Switch sein, sondern die
+Performance-Zentrale für Effektwahl und Effektkombination.
+
+
+4.7 06_CONTROL
+
+Control-Bus für globale Steuerung:
+
+- fx_index,
+- mix_mode,
+- blend,
+- fx_a,
+- fx_b,
+- master_brightness,
+- master_contrast,
+- master_gamma,
+- output_dimmer,
+- blackout,
+- output_source,
+- force_opaque,
+- amount,
+- audio_amount,
+- speed,
+- detail,
+- brightness,
+- contrast,
+- color_shift,
+- mask_amount,
+- feedback_amount.
+
+Das Ziel ist, dass Effekte nicht isoliert eigene Spezialsteuerungen brauchen,
+sondern in ein gemeinsames Live-Control-System passen.
+
+
+4.8 07_OUTPUT
+
+Finaler Output:
+
+- 1920x1080,
+- RGBA16F,
+- stabiler finaler Ausgang,
+- optional Force-Opaque.
+
+Das ist der Stage-/Mapping-Ausgang.
+
+Output-Ziel:
+
+Das Projekt muss mit einem oder mehreren Beamern funktionieren.
+
+Beispiel:
+
+- Beamer 1: Haupt-Mappingfläche / Hauptobjekt,
+- Beamer 2: Dekoration / zusätzliche Elemente,
+- optional weitere Beamer.
+
+Das Outputsystem muss dafür erweiterbar bleiben:
+
+- ein Hauptoutput,
+- mehrere optionale Zusatzoutputs,
+- spätere Spout-/NDI-/Fullscreen-/Window-Ausgabe,
+- projektinterne Output-Zuordnung,
+- keine hartcodierte Ein-Beamer-Annahme in Effekten.
+
+Effekte selbst sollten möglichst nicht wissen müssen, welcher Beamer aktiv ist.
+Die Effektbank liefert visuelle Layer; die Output-/Mapping-Schicht verteilt sie.
+
+
+4.9 DASHBOARD- UND UI-ZIEL
+
+Es gibt zwei Ebenen:
+
+1. grundlegendes Dashboard ohne finale UI,
+2. späteres Master Dashboard mit UI.
+
+Grundlegendes Dashboard ohne UI:
+
+- Inputbilder,
+- Inputmasken,
+- Audioinput,
+- Audiofile zum Testen,
+- Audio-Device für späteres Live-Signal,
+- grundlegende Router-/Control-Werte,
+- Output-Prüfung.
+
+Master Dashboard UI:
+
+Soll später alle grundlegenden Optionen beinhalten:
+
+- Inputbilder / Masken,
+- Audioquelle,
+- Audioanalyse / Optimierungen,
+- Outputwahl,
+- Spout / NDI / weitere Ausgabeoptionen,
+- aktive Effekte,
+- Effektparameter,
+- globale Parameter,
+- Performance-/Statusanzeigen.
+
+Effekt Dashboard UI:
+
+- folgt später,
+- soll pro Effekt Detailparameter zugänglich machen,
+- darf die Grundarchitektur nicht ersetzen,
+- baut auf den stabilen Effektparametern auf.
+
+
+5. DIE EIGENTLICHE PROJEKTVISION
+
+Die Vision ist ein audioreaktiver, maskenbasierter Effektkasten für ein Objekt
+oder Motiv, der sich wie ein Live-Instrument verhält.
+
+Nicht:
+„Wir bauen einen coolen Effekt.“
+
+Sondern:
+
+Wir bauen ein performantes System, das aus einer visuellen Vorlage eine Reihe
+von hochwertigen Festival-/Mapping-Looks erzeugt, die live geschaltet,
+musikalisch gesteuert und stabil betrieben werden können.
+
+Das finale Projekt soll sich anfühlen wie ein visueller Synthesizer:
+
+- Input = Oszillator / visuelles Material,
+- Maske/Analyse = Modulationsmatrix,
+- Audio = externer Clock-/Envelope-/Trigger-Bus,
+- FX = Klangfarben / Presets / Module,
+- Router = Performance-Auswahl,
+- Output = Stage-Signal.
+
+
+6. KÜNSTLERISCHE QUALITÄTSREGELN
+
+6.1 Effekt muss eine lesbare Idee haben
+
+Ein Effekt darf nicht nur „irgendwas animiertes“ sein. Jeder FX-Slot braucht ein
+klares Konzept:
+
+- Lightning = natürliches Gewitter / Beatstorm,
+- Saber Path = kurze wandernde Energieklinge an Kontur,
+- Saber Outline = kontrollierte Kontur-Energie,
+- Physarum = organisches Ader-/Biolumineszenznetz,
+- Orbiting Relief = Lichtkörper auf Relief,
+- Electric Arcs = elektrische Kantenimpulse,
+- Clean Pack = stabile Multi-Looks.
+
+
+6.2 Maske ist Gesetz
+
+Wenn ein Effekt maskenbasiert sein soll, darf er nicht:
+
+- über das ganze Bild rauschen,
+- nur das Originalbild krisselig machen,
+- die Objektkante ignorieren,
+- Flächen unkontrolliert füllen,
+- Schwarz als graues Restlicht zeigen.
+
+
+6.3 Schwarz muss schwarz sein
+
+Für viele Effekte ist der Grundzustand wichtig:
+
+- schwarzer Idle,
+- transparente Bereiche wirklich transparent,
+- kein ungewolltes Grundglimmen,
+- keine dreckige Noise-Textur im Hintergrund.
+
+Das war besonders bei FX04 und FX08 relevant.
+
+
+6.4 Audioreaktivität muss musikalisch sein
+
+Nicht ausreichend:
+
+- Parameter bewegt sich,
+- Helligkeit pulst,
+- irgendwas reagiert auf Kick.
+
+Erwartet:
+
+- Beat wirkt visuell nachvollziehbar,
+- langsame Parts werden ruhiger,
+- Drops/Peaks bekommen mehr Energie,
+- Kick/Bass verändern Timing oder Intensität sinnvoll,
+- Tempo darf nicht unplausibel wirken,
+- keine hektische Dauerreaktion ohne musikalischen Grund.
+
+
+6.5 Jeder Effekt muss live stabil bleiben
+
+Keine Patches, die:
+
+- nach ein paar Sekunden tot werden,
+- Shader compile warnings haben,
+- riesige unkontrollierte Loops erzeugen,
+- FPS zerstören,
+- Router/Control-Bus beschädigen,
+- alte TOX-Strukturen unkontrolliert einbetten.
+
+
+7. HISTORISCHE ENTWICKLUNG
+
+7.1 Frühe Phase: Lightning-Fokus
+
+Das Projekt war am Anfang stark auf FX03_LIGHTNING_STORM fokussiert.
+
+Das Ziel war ein realistischer Blitz-/Gewittereffekt:
+
+- kein Ast-Popping,
+- keine Spiralen,
+- keine rückläufigen Pfade,
+- kein Rollen/Aufwickeln,
+- keine gleichförmigen Äste,
+- Hauptstrang zuerst,
+- feine Verästelung nachgeordnet,
+- BAM-Flash,
+- organisches Abklingen,
+- Beatstorm statt zufälliges Flackern.
+
+Viele Zwischenstände waren technisch aktiv, aber visuell falsch:
+
+- zu gleichmäßig,
+- zu konstruiert,
+- zu gerade,
+- zu kreisförmig,
+- Äste wirkten wie Pop-Up-Geometrie,
+- Beatreaktion zerstörte Natürlichkeit.
+
+Der akzeptierte Zwischenstand ist die V47A3-Linie. Nicht perfekt als Endziel,
+aber als stabiler Checkpoint geschützt.
+
+Projektregel:
+FX03 nicht blind neu bauen.
+
+
+7.2 V48-Phase: Alte v0.3-Shader als Quelle
+
+Dann kam die alte .toe / v0.3-Datei als Referenz.
+
+Wichtige Entscheidung:
+
+- alte TOX/TOE nicht einbetten,
+- keine alte Struktur importieren,
+- nur Shaderideen extrahieren,
+- nativ ins neue Projekt adaptieren.
+
+Das war entscheidend, weil das neue Projekt eine saubere Architektur behalten
+soll. Alte Shader sind Referenzmaterial, nicht neue Projektbasis.
+
+
+7.3 V49-Phase: Native Shaderbank
+
+Danach entstand die native Shaderbank FX04 bis FX11.
+
+Das ist ein großer architektonischer Schritt:
+weg vom Einzel-Experiment, hin zum modularen Effekt-Rack.
+
+Die aktuelle Bank ist technisch integriert, aber künstlerisch noch nicht
+vollständig fertig.
+
+
+7.4 FX04-Phase
+
+FX04 sollte ein Mapping-Master-/Contour-/Energy-Look werden.
+
+Problem:
+
+- mehrfach technisch lauffähig,
+- aber visuell nicht brauchbar genug,
+- teilweise krisselig,
+- nicht sauber objekt-/maskengeführt,
+- Outline zu dominant,
+- kein schöner klarer Effekt.
+
+FX04 ist deshalb nicht als fertig akzeptiert.
+
+
+7.5 FX08-Phase
+
+FX08 sollte ein Saber Path werden:
+
+- schwarzer/transparenter Idle,
+- kurze klare Saber-Linie,
+- läuft an Maskenkante,
+- nicht ganze Outline dauerhaft,
+- nicht Krissel,
+- nicht freie Linien im Raum,
+- wie ein lokaler Lichtkopf entlang des Objektrands.
+
+R3 hat technisch den ersten klaren Saber-Head geschafft, aber die Pfadlogik ist
+noch falsch. Der Effekt ist geparkt.
+
+
+8. AKTUELLE AKZEPTANZLAGE DER EFFEKTE
+
+FX00 Bypass
+- technisch ok,
+- Diagnose/Bypass.
+
+FX01 Slime Mask
+- vorhanden,
+- älterer maskenbasierter Effekt.
+
+FX02 Orbiting 3D Lights
+- vorhanden,
+- ältere Licht-/Relief-Idee.
+
+FX03 Lightning Storm
+- geschützt,
+- stabiler Checkpoint,
+- nicht blind ändern.
+
+FX04 Mapping Master
+- problematisch,
+- technisch aktiv,
+- künstlerisch nicht akzeptiert.
+
+FX05 Shadertoy Surface
+- technisch ok,
+- Holographic Scan Surface.
+
+FX06 Physarum Surface
+- technisch ok,
+- organische Aderstruktur.
+
+FX07 Saber Outline
+- technisch ok,
+- edge-only Outline-Energie.
+
+FX08 Saber Path
+- geparkt,
+- technischer Fortschritt,
+- visuell nicht final.
+
+FX09 Orbiting Relief Lights
+- erhalten,
+- Relief-Lichtlook.
+
+FX10 Electric Contour Arcs
+- technisch ok,
+- Kanten-/Arc-Energie.
+
+FX11 Clean Pack
+- erhalten,
+- großer stabiler Multi-Mode-Pack.
+
+
+9. WAS DAS PROJEKT AM ENDE KÖNNEN SOLL
+
+9.1 Ein Motiv in ein lebendes Bühnenobjekt verwandeln
+
+Der Käfer / das Inputobjekt soll nicht nur gezeigt werden. Es soll energetisch
+bespielt werden:
+
+- Kanten leuchten,
+- Linien wandern,
+- Blitze schlagen ein,
+- Relief-Lichter bewegen sich,
+- organische Adern pulsieren,
+- elektrische Entladungen laufen über Konturen,
+- Musik steuert Intensität, Tempo und Charakter.
+
+
+9.2 Verschiedene Effektcharaktere anbieten
+
+Nicht jeder Slot soll gleich wirken. Die Bank braucht starke visuelle
+Differenzierung:
+
+- ruhig / subtil,
+- organisch / lebendig,
+- elektrisch / aggressiv,
+- räumlich / reliefartig,
+- konturbasiert / präzise,
+- vollflächig / surface-artig,
+- blackout-/transparent-fähig.
+
+
+9.3 Live bedienbar sein
+
+Der Performer soll nicht jedes Mal im Netzwerk suchen müssen.
+
+Ziel:
+
+- Effekt per fx_index wählen,
+- globale Intensität steuern,
+- Audio-Anteil steuern,
+- Speed/Detail/Brightness anpassen,
+- Output dimmen/blackouten,
+- stabile Umschaltung ohne tote Shader.
+
+Zusätzlich:
+
+- aktive Effekte sollen gezielt aktivierbar sein,
+- inaktive Effekte sollen möglichst keine unnötige Rechenlast erzeugen,
+- Effektkombinationen sollen später möglich sein,
+- mehrere Outputs/Beamer sollen steuerbar werden,
+- Audioquelle soll live umstellbar bzw. austauschbar sein.
+
+
+9.4 Generisch genug für andere Inputs sein
+
+Die Effekte dürfen nicht nur exakt für das aktuelle Käferbild funktionieren.
+
+Sie sollen robust sein bei:
+
+- anderen Alpha-Masken,
+- anderen Objektformen,
+- anderen Kontrasten,
+- anderen Konturdichten,
+- helleren/dunkleren Inputs.
+
+Das bedeutet:
+Effekte müssen aus Maske/Analyse arbeiten, nicht aus hartcodierten Pixelpfaden.
+
+FX08-R3 zeigt genau die Grenze:
+Ein statisch extrahierter Pfad funktioniert technisch, ist aber nicht generisch
+genug.
+
+
+10. WAS „FERTIG“ BEDEUTET
+
+Ein Effekt ist erst fertig, wenn alle folgenden Punkte erfüllt sind:
+
+- kompiliert ohne Fehler/Warnungen,
+- Output lebt,
+- 1920x1080 Vertrag bleibt erhalten,
+- keine ungewollten grauen/schwarzen Artefakte,
+- Maske wird korrekt respektiert,
+- Effektidee ist visuell sofort erkennbar,
+- Audio beeinflusst sinnvoll, nicht beliebig,
+- reagiert auch mit anderem Input plausibel,
+- Performance bleibt live-tauglich,
+- Router/Control-Bus bleiben intakt,
+- PRE/POST Save und Report existieren,
+- Video-Abgleich ist akzeptiert.
+
+Technisch erfolgreich ist nicht gleich künstlerisch akzeptiert.
+Das war eine der wichtigsten Lehren dieses Projekts.
+
+
+11. AKTUELL WICHTIGE ARCHITEKTURBEFUNDE
+
+11.1 Router
+
+Der zentrale Live-Zustand im V49Z2-Export:
+
+Router index = 4
+Aktiver Effekt = FX04_MAPPING_MASTER
+
+Wenn der sichtbare Effekt nicht erwartet wird, ist das relevant:
+Das System zeigt aktuell FX04. Wenn ein anderer Effekt bewertet werden soll,
+muss zuerst fx_index geprüft/gesetzt werden.
+
+
+11.2 Audio
+
+Audio läuft, aber Tempo ist nicht valid:
+
+sys_audio_active = 1
+tempo_bpm ca. 123
+tempo_performance_bpm ca. 136
+sys_tempo_valid = 0
+
+Das heißt:
+Audiofeatures sind vorhanden, aber der Tempo-/Beat-Lock ist nicht vollständig
+vertrauenswürdig. Für Beat-Effekte ist das eine potenzielle Kernbaustelle.
+
+
+11.3 FX08
+
+FX08 ist technisch sauber, aber visuell geparkt.
+
+Stand:
+GG_V49D2R3_FX08_UNROLLED_EXTRACTED_PATH_RESERVED_WORD_FIX
+
+Bewertung:
+
+- läuft,
+- kompiliert,
+- schwarzer/transparenter Idle möglich,
+- klarer Saber-Head erreicht,
+- Pfadlogik noch nicht final,
+- nicht generisch genug für unterschiedliche Inputs.
+
+
+11.4 Dokumentationsdrift
+
+Einige Dossiers und Shader-Kommentare enthalten noch ältere Statusformulierungen.
+Beispiele:
+
+- V49B0R1 wird in Handover-Dateien noch als letzter Polish genannt.
+- FX08 Shader-Kommentar kann V49D2R2 sagen, obwohl R3 der relevante Stand ist.
+- Einige alte FX03-Notizen sind historisch gefärbt.
+
+Das ist kein akuter Compile-Fehler, aber eine echte Projektmanagement-Baustelle.
+
+
+12. ENDZUSTAND ALS PRODUKTBESCHREIBUNG
+
+MAP_MASTER soll am Ende ein modulares, audioreaktives Mapping-System sein, das
+aus einem maskierten Motiv ein dynamisches Festival-Visual-Instrument macht.
+
+Es kombiniert:
+
+- objektbasierte Analyse,
+- musikalische Audiofeatures,
+- kontur- und maskengeführte Shader,
+- eine routerbasierte Effektbank,
+- ein zentrales Live-Control-System,
+- reproduzierbare Codex/TD-Bridge-Patches,
+- forensische Deep-Exports für Übergaben.
+- flexible Projektpfade,
+- austauschbare Inputbilder,
+- pinke nicht-animierte Masken-/Referenzbereiche,
+- optimierbaren Audioanalyser mit stabilem Master-Bus,
+- mehrere Beamer-/Output-Ziele,
+- spätere Master-Dashboard-UI,
+- spätere Effekt-Dashboard-UI.
+
+Der künstlerische Anspruch:
+
+- dunkle,
+- präzise,
+- energiegeladene,
+- performante Visuals,
+- die am Objekt haften,
+- und musikalisch atmen.
+
+Der technische Anspruch:
+
+- keine instabilen Shader-Experimente,
+- keine unkontrollierten Altlasten,
+- keine alten TOX-Importe,
+- keine Zufallsreparaturen ohne Audit,
+- keine Patch-Orgie ohne visuelle Akzeptanzprüfung.
+- keine hartcodierten absoluten Projektpfade, wenn relative/project-local Pfade möglich sind,
+- keine direkten Effektabhängigkeiten von instabilen Analyzer-Interna,
+- keine Ein-Beamer-Zwangsarchitektur,
+- keine dauerhaft kochenden inaktiven Effektketten.
+
+
+13. RICHTIGE NÄCHSTE ARBEITSWEISE
+
+Das Projekt darf nicht weiter durch „immer neuen Shader drüber“ wachsen.
+
+Der richtige nächste Reifegrad:
+
+1. Router/Control/Audiobus als Live-Fundament sichern.
+2. Effektbank einzeln validieren.
+3. Jeden Effekt auf klares Zielbild bringen.
+4. Schlechte Effekte parken statt endlos reparieren.
+5. Gute Effekte stabilisieren und als akzeptierte Checkpoints markieren.
+6. Danach Performance/UX/Live-Steuerung ausbauen.
+
+Der nächste sinnvolle Schritt ist, den aktuell erkannten großen Projektfehler
+konkret zu benennen und ihn gegen diese Zielarchitektur zu prüfen.
+
+
+14. NEUE FESTE PROJEKTANFORDERUNGEN AUS DER GRUNDDEFINITION
+
+14.1 Maximale Updatefähigkeit
+
+Das Projekt muss so strukturiert sein, dass spätere Updates an Effekten,
+Audioanalyse, Router, Output und UI möglich bleiben.
+
+Jede Komponente braucht einen stabilen öffentlichen Vertrag:
+
+- Inputs,
+- Outputs,
+- Parameter,
+- Kanalnamen,
+- Auflösung,
+- Alpha-/Maskenverhalten,
+- Fehler-/Fallbackverhalten.
+
+
+14.2 Verschiebbarkeit des Projektordners
+
+Das Projekt darf nicht an fragile absolute Pfade gebunden sein.
+
+Ziel:
+
+- relative Pfade,
+- projektlokale Asset-Ordner,
+- klare File-Abhängigkeiten,
+- saubere Pfadauflösung,
+- keine versteckten externen Abhängigkeiten ohne Manifest.
+
+Wenn absolute Pfade unvermeidbar sind, müssen sie zentral konfigurierbar sein.
+
+
+14.3 Mehrere Beamer
+
+Das Projekt muss langfristig Multi-Output-fähig werden.
+
+Minimalziel:
+
+- Beamer 1: Hauptobjekt / Hauptmapping,
+- Beamer 2: Dekoration / Zusatzflächen,
+- optional weitere Beamer.
+
+Die Effektlogik soll outputunabhängig bleiben.
+Die Output-/Mapping-Schicht entscheidet, welcher Effekt oder Layer auf welchem
+Beamer landet.
+
+
+14.4 Pinke Maskenlogik
+
+Pink bedeutet:
+
+- nicht animieren,
+- als Vorlage für Maskenkanten verwenden,
+- statische Referenz- bzw. Schutzfläche.
+
+Diese Bedeutung muss in Masken- und Analyse-Pipeline sauber abgebildet werden.
+
+
+14.5 Stabiler Audio-Master-Bus
+
+Der Audioanalyser darf verbessert werden, aber Effekte dürfen dadurch nicht
+brechen.
+
+Deshalb muss zwischen Analyzer und Effekten ein stabiler Audio-Master-Bus liegen.
+
+Effekte greifen auf definierte Standardparameter zu, nicht auf beliebige interne
+Analyzer-Knoten.
+
+
+14.6 Effekte als modulare, abschaltbare Einheiten
+
+Jeder Effekt muss:
+
+- definierte Inputs haben,
+- definierte Outputs haben,
+- eigene Parameter haben,
+- auf globale Parameter reagieren können,
+- masken- und audiokompatibel sein,
+- abschaltbar sein,
+- bei Inaktivität möglichst keine Rechenlast erzeugen.
+
+
+14.7 Router als Kombinationssystem
+
+Der Router soll nicht nur wählen, sondern perspektivisch kombinieren können.
+
+Ziel:
+
+- ein aktiver Effekt,
+- später zwei oder mehrere kombinierte Effekte,
+- Blend-/Mixmodi,
+- kontrollierbare Übergänge,
+- performancebewusste Aktivierung.
+
+
+14.8 Dashboard ohne UI und spätere UI
+
+Zuerst braucht das Projekt ein robustes internes Dashboard/Control-System.
+
+Später folgt UI:
+
+- Master Dashboard für globale Steuerung,
+- Effekt Dashboard für Detailsteuerung.
+
+Die UI darf nur Oberfläche sein, nicht die eigentliche Logik.
+Die Logik muss auch ohne UI stabil funktionieren.
